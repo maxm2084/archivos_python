@@ -47,8 +47,24 @@ def desafio():
     # Al final de esta función retornar (return) la variable stock
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    while True:
+        ingreso = input("Ingrese el articulo que desea agregar al stock: ")
+        if ingreso in stock:
+            cantidad = int(input("Ingrese la cantidad a agregar al stock: "))
+            stock [ingreso] += cantidad
+        elif ingreso not in stock and ingreso != "fin":
+            ingreso = input("Error, ingrese el articulo que desea agregar al stock: ")
+            cantidad = int(input("Ingrese la cantidad a agregar al stock: "))
+            stock [ingreso] += cantidad
+        else:
+            break
+    return stock
+
+
+
+
 
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    desafio()
+    print(desafio())

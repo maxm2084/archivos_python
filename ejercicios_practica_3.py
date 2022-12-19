@@ -15,7 +15,7 @@ import csv
 
 def desafio():
     print('Ejercicio de archivos')
-    archivo = 'stock.csv'
+    archivo = open('stock.csv', 'r')
     
     # Realice un programa que abra el archivo 'stock.csv'
     # en modo lectura y cuente el stock total de tornillos
@@ -29,7 +29,18 @@ def desafio():
 
     # Al final de esta función retornar (return) el stock total de tornillos
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-    
+    stock = list(csv.DictReader(archivo))
+    StockTornillos = 0
+    for i, k in stock:
+        if i == "tornillos":
+            StockTornillos += k
+    stock.close()
+    return StockTornillos
+
+
+
+
+
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
